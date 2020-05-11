@@ -1,0 +1,35 @@
+{
+  "name": "openbuilder-node",
+  "version": "0.1.0",
+  "description": "",
+  "license": "MIT",
+  "author": {
+    "email": "gil4260@korea.ac.kr",
+    "name": "distrue",
+    "url": "https://distrue.github.io"
+  },
+  "main": "dist/index.js",
+  "dependencies": {},
+  "keywords": [
+    "kakao",
+    "openbuilder",
+    "chatbot"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/distrue/openbuilder-node.git"
+  },
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "jest": "^26.0.1"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "jest test/*.test.ts"
+  },
+  "types": "dist/index.d.ts"
+}
