@@ -1,6 +1,6 @@
 {
   "name": "openbuilder-node",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "",
   "license": "MIT",
   "author": {
@@ -31,7 +31,8 @@
   },
   "scripts": {
     "build": "tsc ./lib/index.ts --declaration -outDir ./dist",
-    "test": "jest"
+    "test": "jest",
+    "deploy": "npm run build && npm publish"
   },
   "jest": {
     "transform": {

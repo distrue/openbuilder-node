@@ -21,7 +21,17 @@ export class Template {
         return this.outputs;
     }
 
-    // TODO: develop quickReplies
+    addQuickReply(item: quickReply) {
+        this.quickReplies.push(item);
+    }
+
+    eraseQuickReply(idx: number) {
+        this.quickReplies.splice(idx, 1);
+    }
+
+    listQuickReply() {
+        return this.quickReplies;
+    }
 
     json(): Object {
         return({
