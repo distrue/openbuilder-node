@@ -24,12 +24,28 @@
     "lib"
   ],
   "devDependencies": {
-    "@types/jest": "^25.2.1",
-    "jest": "^26.0.1"
+    "@types/jest": "^25.2.3",
+    "jest": "^26.0.1",
+    "ts-jest": "^26.0.0",
+    "typescript": "^3.9.3"
   },
   "scripts": {
-    "build": "tsc",
-    "test": "jest test/*.test.ts"
+    "build": "tsc ./lib/index.ts --declaration -outDir ./dist",
+    "test": "jest"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "testRegex": "\\.test\\.ts$",
+    "moduleFileExtensions": [
+      "ts", "js"
+    ],
+    "globals": {
+      "ts-jest": {
+        "enableTsDiagnostics": true
+      }
+    }
   },
   "types": "dist/index.d.ts"
 }
