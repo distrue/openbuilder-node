@@ -28,7 +28,7 @@ interface linkParams {
   link: string;
 }
 
-type buttonParams = blockParams | msgParams | shareParams | operatorParams | phoneParams;
+type buttonParams = blockParams | msgParams | shareParams | operatorParams | phoneParams | linkParams;
 
 interface blockButton {
     action: string;
