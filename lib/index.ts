@@ -19,4 +19,4 @@ export class SkillResponse {
   }
 }
 
-export {Output, Card, Cmpnts, QuickReply, Template} from './template';
+export * from './template';
