@@ -1,5 +1,5 @@
-import {blockQuickReply} from './blockQuickReply';
-import {messageQuickReply} from './messageQuickReply';
+import {blockQuickReply} from './blockquickreply';
+import {messageQuickReply} from './messagequickreply';
 
 export interface quickReply {
   label: string;
