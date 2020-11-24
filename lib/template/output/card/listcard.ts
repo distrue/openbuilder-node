@@ -111,7 +111,7 @@ export class ListCard extends Card {
                 "imageUrl": this.thumbnail
               },
               "items": this.items,
-              "buttons": this.buttons
+              "buttons": this.buttons.map(it => it.json() as Button),
             } 
           }); 
     }

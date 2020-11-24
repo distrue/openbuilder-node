@@ -1,9 +1,9 @@
 import { BareOutput, CarouselOutput, carouselType, Output } from "./output";
-import { quickReply } from './quickreply';
+import { QuickReply } from './quickreply';
 
 export class Template {
     outputs: Output[] = [];
-    quickReplies: quickReply[] = [];
+    quickReplies: QuickReply[] = [];
 
     constructor() {
     }
@@ -57,7 +57,7 @@ export class Template {
         return this.outputs;
     }
 
-    addQuickReply(item: quickReply) {
+    addQuickReply(item: QuickReply) {
         this.quickReplies.push(item);
     }
 
@@ -72,7 +72,7 @@ export class Template {
     json(): Object {
         return({
             "outputs": this.outputs.map(it => it.json()),
-            "quickReplies": this.quickReplies
+            "quickReplies": this.quickReplies.map(it => it.json())
         })
     }
 }

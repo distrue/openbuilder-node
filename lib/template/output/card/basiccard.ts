@@ -85,7 +85,7 @@ export class BasicCard extends Card {
             "basicCard": {
                 "title": this.title,
                 "description": this.desc,
-                "buttons": this.buttons,
+                "buttons": this.buttons.map(it => it.json() as Button),
                 "thumbnail": {
                 "imageUrl": this.thumbnail
                 }
@@ -97,7 +97,7 @@ export class BasicCard extends Card {
         return({
             "title": this.title,
             "description": this.desc,
-            "buttons": this.buttons,
+            "buttons": this.buttons.map(it => it.json() as Button),
             "thumbnail": {
               "imageUrl": this.thumbnail
             }

@@ -12,7 +12,7 @@ export abstract class QuickReply {
   action: string;
   messageText: string;
   
-  constructor(label: string, action: string, messageText: string) {
+  constructor(action: string, label: string, messageText: string) {
     this.label = label;
     this.action = action;
     this.messageText = messageText;
