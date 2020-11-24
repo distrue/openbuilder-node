@@ -63,6 +63,7 @@ export class BareOutput extends Output {
 export class CarouselOutput extends Output {
     itemType: carouselType;
     items: carouselCard[] = [];
+    header: any = {};
 
     constructor(type: carouselType) {
       super('carousel');
@@ -84,11 +85,22 @@ export class CarouselOutput extends Output {
         return this.items;
     }
 
+    addHeader(title: string, desc: string, image: string) {
+      this.header = {
+        "title": title,
+        "desc": desc,
+        "thumbnail": {
+          "imageUrl": image
+        }
+      }
+    }
+
     json(): Object {
       return({
         "carousel": {
           "type": this.itemType,
-          "items": this.items.map(it => it.carousel())
+          "items": this.items.map(it => it.carousel()),
+          "header": this.header
         }
       });
     }
