@@ -15,6 +15,7 @@ export interface basicCarouselCell {
     buttons: Button[];
     thumbnail: {
         imageUrl: string;
+        fixedRatio: boolean;
     }
 };
 
@@ -25,6 +26,7 @@ export interface basicCard {
         buttons: Button[];
         thumbnail: {
             imageUrl: string;
+            fixedRation: boolean;
         }
     }
 }
@@ -34,12 +36,14 @@ export class BasicCard extends Card {
     desc: string;
     thumbnail: string;
     buttons: Button[] = [];
+    fixed: boolean;
 
-    constructor(title: string, desc: string, thumbnail: string) {
+    constructor(title: string, desc: string, thumbnail: string, fixed?: boolean) {
         super('basicCard');
         this.title = title;
         this.desc = desc;
         this.thumbnail = thumbnail;
+        this.fixed = fixed? true: false;
     }
 
     addBlockBtn({label, messageText, blockId, extra}:{label: string, messageText: string, blockId: string, extra?: Object}) {
@@ -87,7 +91,8 @@ export class BasicCard extends Card {
                 "description": this.desc,
                 "buttons": this.buttons.map(it => it.json() as Button),
                 "thumbnail": {
-                "imageUrl": this.thumbnail
+                    "imageUrl": this.thumbnail,
+                    "fixedRatio": this.fixed,
                 }
             }
         })
@@ -99,7 +104,8 @@ export class BasicCard extends Card {
             "description": this.desc,
             "buttons": this.buttons.map(it => it.json() as Button),
             "thumbnail": {
-              "imageUrl": this.thumbnail
+              "imageUrl": this.thumbnail,
+              "fixedRatio": this.fixed,
             }
         });
     }
