@@ -26,7 +26,7 @@ export interface basicCard {
         buttons: Button[];
         thumbnail: {
             imageUrl: string;
-            fixedRation: boolean;
+            fixedRatio: boolean;
         }
     }
 }
