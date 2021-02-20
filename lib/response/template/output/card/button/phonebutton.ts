@@ -9,10 +9,10 @@ export interface phoneButton {
 export class PhoneButton extends Button {
   phoneNumber: string;
 
-  constructor(
+  constructor({label, phoneNumber}: {
     label: string,
     phoneNumber: string
-  ) {
+  }) {
     super('phone', label);
     this.phoneNumber = phoneNumber;
   }

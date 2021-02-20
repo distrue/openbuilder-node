@@ -13,12 +13,12 @@ export class BlockButton extends Button {
   blockId: string;
   extra: any;
 
-  constructor(
+  constructor({label, messageText, blockId, extra}: {
     label: string,
     messageText: string,
     blockId: string,
     extra?: Object
-  ) {
+  }) {
     super('block', label);
     this.messageText = messageText;
     this.blockId = blockId;

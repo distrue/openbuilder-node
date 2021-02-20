@@ -1,4 +1,4 @@
-import {quickReply, QuickReply} from './';
+import {quickReply, QuickReply} from '.';
 
 export interface blockQuickReply extends quickReply {
   blockId: string;

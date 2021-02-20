@@ -6,9 +6,7 @@ export interface operatorButton {
 }
 
 export class OperatorButton extends Button {
-  constructor(
-    label: string
-  ) {
+  constructor({label}: {label: string}) {
     super('operator', label);
   }
 

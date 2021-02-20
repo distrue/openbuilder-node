@@ -9,10 +9,10 @@ export interface linkButton {
 export class LinkButton extends Button {
   link: string;
 
-  constructor(
+  constructor({label, link}: {
     label: string,
     link: string,
-  ) {
+  }) {
     super('webLink', label);
     this.link = link;
   }

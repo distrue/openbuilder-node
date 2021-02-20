@@ -6,9 +6,7 @@ export interface shareButton {
 }
 
 export class ShareButton extends Button {
-  constructor(
-    label: string
-  ) {
+  constructor({label}: {label: string}) {
     super('share', label);
   }
 

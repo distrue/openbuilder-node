@@ -6,7 +6,7 @@ export type carouselType = 'basicCard';
 type carouselCard = BasicCard;
 
 export interface Output {
-  addCarouselCell?(params: {title: string, desc: string, thumbnail: string}): void;
+  // no both-using non-abstract method
 }
 
 export abstract class Output {
@@ -21,26 +21,9 @@ export abstract class Output {
 export class BareOutput extends Output {
   card: Card;
 
-  constructor(
-    type: 'basic' | 'commerce' | 'list',
-    title: string,
-    thumbnail: string,
-    desc?: string,
-  ) {
+  constructor(card: Card) {
     super('bare');
-    if(type === 'commerce') {
-      const card = new CommerceCard(title, desc || '', thumbnail);
-      this.card = card;
-    }
-    else if(type === 'list') {
-      const card = new ListCard(title, thumbnail);
-      this.card = card;
-    }
-    else {
-      // assert type === 'basic'
-      const card = new BasicCard(title, desc || '', thumbnail);
-      this.card = card;
-    }
+    this.card = card;
   }
 
   getCardasBasic(): BasicCard {
@@ -72,8 +55,12 @@ export class CarouselOutput extends Output {
 
     // TODO: seperate Commmerce Carousel and Basic Carousel Cell addition
     // Only one type can be line up
-    addCarouselCell({title, desc, thumbnail}:{title: string, desc: string, thumbnail: string}) {
-      const card = new BasicCard(title, desc, thumbnail);
+    addCarouselCell(card: carouselCard) {
+      this.items.push(card);
+    }
+    
+    addBasicCarouselCell({title, desc, thumbnail}:{title: string, desc: string, thumbnail: string}) {
+      const card = new BasicCard({title, desc, thumbnail});
       this.items.push(card);
     }
 
@@ -85,6 +72,7 @@ export class CarouselOutput extends Output {
         return this.items;
     }
 
+    // TODO: this is experimental one
     addHeader(title: string, desc: string, image: string) {
       this.header = {
         "title": title,
@@ -105,4 +93,3 @@ export class CarouselOutput extends Output {
       });
     }
 }
-

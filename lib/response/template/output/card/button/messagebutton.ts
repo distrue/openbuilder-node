@@ -9,10 +9,10 @@ export interface messageButton {
 export class MessageButton extends Button {
   messageText: string;
 
-  constructor(
+  constructor({label, messageText}: {
     label: string,
     messageText: string,
-  ) {
+  }) {
     super('message', label);
     this.messageText = messageText;
   }
