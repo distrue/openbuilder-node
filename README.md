@@ -13,7 +13,7 @@ The library includes a functions as below:
       * [x] basicCard
       * [x] textCard
       * [x] listCard
-      * [] commerceCard
+      * [ ] commerceCard
       * [x] buttons in card
       * [x] thumbnail (wide / normal)
     * response Types
@@ -25,8 +25,8 @@ The library includes a functions as below:
       * [x] phoneQuickReply
       * [x] shareQuickReply
     * additionals
-      * [] verification API
-      * [] context
-      * [] eventAPI
+      * [ ] verification API
+      * [ ] context
+      * [ ] eventAPI
       
 PR, comment, or implementation idea are welcome! You can add issue or mail me (gil4260@korea.ac.kr)
